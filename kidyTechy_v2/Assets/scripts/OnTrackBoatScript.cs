@@ -108,6 +108,7 @@ public class OnTrackBoatScript : MonoBehaviour, ITrackableEventHandler {
 
     public void goToIslandScene()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
+        Initiate.Fade("island", Color.black, 1f);
     }
 }
