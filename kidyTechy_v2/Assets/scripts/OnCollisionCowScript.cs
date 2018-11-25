@@ -4,40 +4,26 @@ using UnityEngine;
 
 public class OnCollisionCowScript : MonoBehaviour {
 
-    GameObject boyObj;
-    GameObject canvasObj;
-    public Canvas EscCan;
+
+    public GameObject panel_5_1;
+    public AudioSource panelAudioSource;
+    public AudioClip panelClip;
+    bool cowCollided;
+
 
     // Use this for initialization
     void Start () {
-        boyObj = GameObject.Find("boy");
-
-        canvasObj = GameObject.Find("Challenge_math");
-
-        /*if (canvasObj != null)
-        {
-            EscCan = canvasObj.GetComponent<Canvas>();
-            if (EscCan == null)
-            {
-                Debug.Log("Could not locate Canvas component on " + canvasObj.name);
-            }
-        }*/
-
-        EscCan.enabled = false;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(boyObj.name + " collided with " + collision.gameObject.name);
-
+        cowCollided = false;
+        panel_5_1.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(boyObj.name + " has triggered " + other.gameObject.name);
-        if (Levels.getLevel() == 3)
+        if (!cowCollided)
         {
-            EscCan.enabled = true;
+            panel_5_1.SetActive(true);
+            panelAudioSource.PlayOneShot(panelClip, 1f);
+            cowCollided = true;
         }
     }
 }
