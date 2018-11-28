@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnCollisionBunny : MonoBehaviour {
 
-    public GameObject panel_5_1;
+    public GameObject bunnyPanel;
     public AudioSource panelAudioSource;
     public AudioClip panelClip;
     bool bunnyCollided;
@@ -12,14 +12,14 @@ public class OnCollisionBunny : MonoBehaviour {
     // Use this for initialization
     void Start () {
         bunnyCollided = false;
-        panel_5_1.SetActive(false);
+        bunnyPanel.SetActive(false);
         
     }
 
     void OnTriggerEnter(Collider other)
     {
             if(!bunnyCollided) {
-                panel_5_1.SetActive(true);
+                bunnyPanel.SetActive(true);
                 panelAudioSource.PlayOneShot(panelClip, 1f);
                 bunnyCollided = true;
             }

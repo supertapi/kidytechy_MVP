@@ -15,18 +15,16 @@ public class JoystickBoy : MonoBehaviour
     public Joystick joystick;
     Vector3 moveDirection = Vector3.zero;
     float gravity = 19;
-    GameObject coconutObj;
+    public GameObject initObj;
     public AudioSource walkAudioSource;
-    public AudioClip walkAudioClip;
-        
+    public AudioClip walkAudioClip;        
 
     void Start()
     {
         boyObj = GameObject.Find("boy");
-        coconutObj = GameObject.Find("Coconut_pos_0");
         anim = boyObj.GetComponent<Animator>();
         controller = transform.GetComponent<CharacterController>();
-        boyObj.transform.position = coconutObj.transform.position;
+        boyObj.transform.position = initObj.transform.position;
         // LeanTween.move(boyObj, coconutObj.transform, 1.0f).setEase(LeanTweenType.easeOutQuad);
         Invoke("StartUpdating", 2);
         Invoke("GravityOff", 1);
