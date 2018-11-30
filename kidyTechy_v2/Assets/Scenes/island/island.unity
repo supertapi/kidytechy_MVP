@@ -6966,8 +6966,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36095468c98e96d41adbdacfd56b369c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failAudioSource: {fileID: 553729709}
-  failClip: {fileID: 8300000, guid: ed621613b166fca459803d247f9d98eb, type: 3}
+  successAudioSource: {fileID: 9241542}
+  successAudioClip: {fileID: 8300000, guid: 401ce38c56468ab479b6d7cfd3c0a805, type: 3}
+  tortoiseObj: {fileID: 1045774307}
+  _panelt: {fileID: 1793746511}
 --- !u!1 &293339369
 GameObject:
   m_ObjectHideFlags: 0
@@ -12473,10 +12475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5b531ea351e0f428a62bd3f178cfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  successAudioSource: {fileID: 9241542}
-  successAudioClip: {fileID: 8300000, guid: 401ce38c56468ab479b6d7cfd3c0a805, type: 3}
-  tortoiseObj: {fileID: 1045774307}
-  _panelt: {fileID: 1793746511}
+  failAudioSource: {fileID: 553729709}
+  failClip: {fileID: 8300000, guid: ed621613b166fca459803d247f9d98eb, type: 3}
 --- !u!1 &382519827
 GameObject:
   m_ObjectHideFlags: 0
@@ -12565,7 +12565,7 @@ CharacterController:
   m_GameObject: {fileID: 388985626}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.72
@@ -26881,23 +26881,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 127686, guid: f9f3fefaa04a9444098b44a56b16b6b2,
     type: 2}
   m_PrefabInternal: {fileID: 398523630}
---- !u!143 &1045774308
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1045774307}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1045774309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 467862, guid: f9f3fefaa04a9444098b44a56b16b6b2,
