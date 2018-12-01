@@ -7,22 +7,25 @@ public class OnCollisionBunny : MonoBehaviour {
     public GameObject bunnyPanel;
     public AudioSource panelAudioSource;
     public AudioClip panelClip;
-    bool bunnyCollided;
+    //bool bunnyCollided;
 
     // Use this for initialization
     void Start () {
-        bunnyCollided = false;
+       // bunnyCollided = false;
         bunnyPanel.SetActive(false);
         
     }
 
     void OnTriggerEnter(Collider other)
     {
+        /*
             if(!bunnyCollided) {
                 bunnyPanel.SetActive(true);
                 panelAudioSource.PlayOneShot(panelClip, 1f);
                 bunnyCollided = true;
             }
-            
+        */
+        bunnyPanel.SetActive(true);
+        panelAudioSource.PlayOneShot(panelClip, 1f);
     }
 }
