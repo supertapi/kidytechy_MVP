@@ -7,7 +7,11 @@ public class BoyFollow : MonoBehaviour
     public Transform _target;
     public float _actionRadio = 10f;
     public float _aimRadio = 30f;
+
+    public string _animation;
     public float _velocity = 5f;
+
+    public GameObject follower;
 
     float _distance;
     Animator _anim;
@@ -16,7 +20,7 @@ public class BoyFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _anim = gameObject.GetComponent<Animator>();
+        _anim = follower.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,7 +43,7 @@ public class BoyFollow : MonoBehaviour
             enemyPos.y = transform.position.y;
 
             transform.position = Vector3.MoveTowards(enemyPos, objetivoPos, _velocity * Time.deltaTime);
-            _anim.SetBool("run",true);
+            _anim.SetBool(_animation, true);
         }
 
     }

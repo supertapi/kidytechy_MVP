@@ -27,7 +27,7 @@ public class OnTouchWaterScript : MonoBehaviour {
 			boyObj.transform.position = point2.transform.position;
 
 		} else if(islandIndex== 3){
-            boyObj.transform.position = point3.transform.position;
+            	boyObj.transform.position = point3.transform.position;
 		}
        
     }
