@@ -2,35 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoyFollow : MonoBehaviour
-{
-    public Transform _target;
-    public float _actionRadio = 10f;
-    public float _aimRadio = 30f;
+public class BoyFollowByWitch : MonoBehaviour {
 
-    public float _velocity = 5f;
+    public Transform _target;
+    public float actionRadio = 10f;
+    public float aimRadio = 30f;
+
+    public float _speed = 5f;
 
     float _distance;
     Animator _anim;
 
 
     // Use this for initialization
-    void Start()
-    {
+    void Start () {
         _anim = gameObject.GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+	}
+	
+	// Update is called once per frame
+	void Update () {
         _distance = Vector3.Distance(transform.position, _target.position);
 
-        if (_distance < _aimRadio)
+        if (_distance < aimRadio)
         {
             transform.LookAt(_target);
         }
 
-        if (Vector3.Distance(transform.position, _target.position) < _actionRadio)
+        if (Vector3.Distance(transform.position, _target.position) < actionRadio)
         {
             Vector3 enemyPos = transform.position;
             Vector3 objetivoPos = _target.position;
@@ -39,9 +37,10 @@ public class BoyFollow : MonoBehaviour
 
             enemyPos.y = transform.position.y;
 
-            transform.position = Vector3.MoveTowards(enemyPos, objetivoPos, _velocity * Time.deltaTime);
-            _anim.SetBool("run", true);
+            transform.position = Vector3.MoveTowards(enemyPos, objetivoPos, _speed * Time.deltaTime);
+            _anim.SetBool("Witch_Walk", true);
         }
 
     }
+	
 }

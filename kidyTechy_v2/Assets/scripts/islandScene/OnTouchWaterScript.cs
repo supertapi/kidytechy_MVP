@@ -17,6 +17,7 @@ public class OnTouchWaterScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+		/* 
 		if(islandIndex == 0) {
             boyObj.transform.position = startPoint.transform.position;
 
@@ -27,7 +28,25 @@ public class OnTouchWaterScript : MonoBehaviour {
 			boyObj.transform.position = point2.transform.position;
 
 		} else if(islandIndex== 3){
-            	boyObj.transform.position = point3.transform.position;
+            boyObj.transform.position = point3.transform.position;
+		}
+		*/
+		if(other.gameObject.tag == "Player" & islandIndex == 0)
+		{
+			boyObj.transform.position = startPoint.transform.position;
+		}
+		else if(other.gameObject.tag == "Player" & islandIndex == 1)
+        {
+            boyObj.transform.position = point1.transform.position;
+        }
+    	else if(other.gameObject.tag == "Player" & islandIndex == 2)
+		{
+			boyObj.transform.position = point2.transform.position;
+
+		} 
+		else if(other.gameObject.tag == "Player" & islandIndex== 3)
+		{
+            boyObj.transform.position = point3.transform.position;
 		}
        
     }
